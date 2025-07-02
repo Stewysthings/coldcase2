@@ -1,0 +1,71 @@
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('./images/mossy_forest.jpg') center/cover no-repeat;
+    filter: blur(1px);
+    z-index: -1;
+}
+
+.image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* optional */
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Make all victim photos fill their container */
+.card-img-top { /* If using Bootstrap cards */
+  width: 100%;
+  height: 300px; /* Fixed height (adjust as needed) */
+  object-fit: cover; /* Covers space, crops excess */
+  object-position: top; /* Focus on faces (adjust if needed) */
+  aspect-ratio: 3/4; /* Forces all images to same ratio */
+  
+}
+
+
+.photo-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('./images/torn_paper_edge2.jpg') center/cover no-repeat;
+    padding: 0.8rem 1rem;
+    font-family: "Special Elite", monospace;
+    color: #333;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* slight shadow for realism */
+    text-align: center;
+    width: 80%;
+    max-width: 250px;
+    border-radius: 0.3rem; /* optional */
+
+    /* fade the outer 10% of the edges */
+    mask-image: radial-gradient(ellipse 90% 90% at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 90% at center, black 60%, transparent 100%);
+}
+
+/* Target the element below the heading bar */
+.photos-container {
+  margin-top: 100px; /* Adjust pixel value as needed */
+}
+
+/* Add space BELOW the heading/nav */
+header, .navbar, .hero-banner {
+  margin-bottom: 40px !important; /* Override Bootstrap if needed */
+}
+
+
